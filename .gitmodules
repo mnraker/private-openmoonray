@@ -68,7 +68,7 @@
 	branch = windows
 [submodule "moonray/render_profile_viewer"]
 	path = moonray/render_profile_viewer
-	url = ../private-render_profile_viewer.git
+	url = ../render_profile_viewer.git
 	branch = main
 [submodule "rats"]
 	path = rats
