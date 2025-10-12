@@ -4,71 +4,71 @@
 	branch = main
 [submodule "arras/arras4_core"]
 	path = arras/arras4_core
-	url = ../arras4_core
-	branch = main
+	url = ../private-arras4_core
+	branch = windows
 [submodule "moonray/scene_rdl2"]
 	path = moonray/scene_rdl2
-	url = ../scene_rdl2
-	branch = main
+	url = ../private-scene_rdl2
+	branch = windows
 [submodule "moonray/mcrt_denoise"]
 	path = moonray/mcrt_denoise
 	url = ../mcrt_denoise
-	branch = main
+	branch = windows
 [submodule "moonray/moonray"]
 	path = moonray/moonray
-	url = ../moonray
-	branch = main
+	url = ../private-moonray
+	branch = windows
 [submodule "moonray/moonshine"]
 	path = moonray/moonshine
-	url = ../moonshine
-	branch = main
+	url = ../private-moonshine
+	branch = windows
 [submodule "moonray/moonshine_usd"]
 	path = moonray/moonshine_usd
-	url = ../moonshine_usd
-	branch = main
+	url = ../private-moonshine_usd
+	branch = windows
 [submodule "moonray/moonray_arras/mcrt_dataio"]
 	path = moonray/moonray_arras/mcrt_dataio
-	url = ../mcrt_dataio
-	branch = main
+	url = ../private-mcrt_dataio
+	branch = windows
 [submodule "moonray/moonray_arras/mcrt_computation"]
 	path = moonray/moonray_arras/mcrt_computation
-	url = ../mcrt_computation
-	branch = main
+	url = ../private-mcrt_computation
+	branch = windows
 [submodule "moonray/moonray_arras/mcrt_messages"]
 	path = moonray/moonray_arras/mcrt_messages
-	url = ../mcrt_messages
-	branch = main
+	url = ../private-mcrt_messages
+	branch = windows
 [submodule "moonray/moonray_gui"]
 	path = moonray/moonray_gui
-	url = ../moonray_gui
-	branch = main
+	url = ../private-moonray_gui
+	branch = windows
 [submodule "moonray/hydra/hdMoonray"]
 	path = moonray/hydra/hdMoonray
-	url = ../hdMoonray
-	branch = main
+	url = ../private-hdMoonray
+	branch = windows
 [submodule "arras/arras_render"]
 	path = arras/arras_render
-	url = ../arras_render
-	branch = cmake_linux
+	url = ../private-arras_render
+	branch = windows
 [submodule "arras/distributed/arras4_node"]
 	path = arras/distributed/arras4_node
-	url = ../arras4_node
-	branch = cmake_linux
+	url = ../private-arras4_node
+	branch = windows
 [submodule "cmake_modules"]
 	path = cmake_modules
 	url = ../cmake_modules
-	branch = main
+	branch = windows
 [submodule "moonray/hydra/moonray_sdr_plugins"]
 	path = moonray/hydra/moonray_sdr_plugins
-	url = ../moonray_sdr_plugins
-	branch = main
+	url = ../private-moonray_sdr_plugins
+	branch = windows
 [submodule "moonray/moonray_dcc_plugins"]
 	path = moonray/moonray_dcc_plugins
-	url = ../moonray_dcc_plugins
-	branch = main
+	url = ../private-moonray_dcc_plugins
+	branch = windows
 [submodule "moonray/render_profile_viewer"]
 	path = moonray/render_profile_viewer
-	url = ../render_profile_viewer.git
+	url = ../private-render_profile_viewer.git
 	branch = main
 [submodule "rats"]
 	path = rats
