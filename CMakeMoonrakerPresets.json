@@ -31,7 +31,7 @@
                 "QT_ROOT"                       : "$env{REZ_QT_ROOT}",
                 "Python_ROOT_DIR"               : "$env{REZ_PYTHON_ROOT}",
                 "Python3_ROOT_DIR"              : "$env{REZ_PYTHON_ROOT}",
-                "TBB_ROOT"                      : "$env{REZ_TBB_ROOT}",
+                "_TBB_ROOT"                      : "$env{TBB_ROOT}",
                 "OpenImageDenoise_DIR"          : "$env{REZ_OIDN_ROOT}/lib/cmake/OpenImageDenoise-$env{REZ_OIDN_VERSION}",
                 "Freetype_ROOT"                 : "$env{REZ_FREETYPE_ROOT}",
                 "OpenEXR_DIR"                   : "$env{REZ_OPENEXR_ROOT}/lib/cmake/OpenEXR",
@@ -47,10 +47,7 @@
                 "Python_FIND_STRATEGY": "LOCATION",
                 "Python3_FIND_STRATEGY": "LOCATION",
                 "BOOST_PYTHON_COMPONENT_NAME": "python$env{REZ_PYTHON_MAJOR_VERSION}$env{REZ_PYTHON_MINOR_VERSION}",
-                "Python_MAJOR_VERSION": "$env{REZ_PYTHON_MAJOR_VERSION}",
-                "Python3_MAJOR_VERSION": "$env{REZ_PYTHON_MAJOR_VERSION}",
-                "Python_MINOR_VERSION": "$env{REZ_PYTHON_MINOR_VERSION}",
-                "Python3_MINOR_VERSION": "$env{REZ_PYTHON_MINOR_VERSION}"
+                "Python3_VERSION": "$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_PATCH_VERSION}"
             }
         },
         {
@@ -61,7 +58,8 @@
                 "CMAKE_INSTALL_LIBDIR": "lib",
                 "OPENSSL_INCLUDE_DIR": "/usr/include/openssl3",
                 "OPENSSL_CRYPTO_LIBRARY": "/usr/lib64/libcrypto.so.3",
-                "OPENSSL_SSL_LIBRARY": "/usr/lib64/libssl.so.3"
+                "OPENSSL_SSL_LIBRARY": "/usr/lib64/libssl.so.3",
+                "Microhttpd_LIBRARY": "$env{LIBMICROHTTPD_ROOT}/lib/libmicrohttpd.so.0"
             }
         },
         {
@@ -74,16 +72,16 @@
                 "GLEW_ROOT": "$env{REZ_GLEW_ROOT}",
                 "CMAKE_SYSTEM_VERSION": "$env{REZ_WINSDK_VERSION}"
             },
-            "generator": "Visual Studio 17"
+            "generator": "Visual Studio 17 2022"
         },
         {
             "name": "linux-rez-release",
             "displayName": "Linux Rez Release",
             "inherits": "linux-rez",
-            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/release",
+            "binaryDir": "$env{BUILD_DIR}/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/release",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/release/openmoonray",
+                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/release/openmoonray",
                 "MOONRAY_USE_OPTIX": "NO"
             },
             "generator": "Unix Makefiles"
@@ -92,10 +90,10 @@
             "name": "linux-rez-relwithdebinfo",
             "displayName": "Linux Rez RelWithDebInfo",
             "inherits": "linux-rez",
-            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/relwithdebinfo",
+            "binaryDir": "$env{BUILD_DIR}/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/relwithdebinfo",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/relwithdebinfo/openmoonray",
+                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/relwithdebinfo/openmoonray",
                 "MOONRAY_USE_OPTIX": "NO"
             },
             "generator": "Unix Makefiles"
@@ -104,10 +102,10 @@
             "name": "linux-rez-debug",
             "displayName": "Linux Rez Debug",
             "inherits": "linux-rez",
-            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/debug",
+            "binaryDir": "$env{BUILD_DIR}/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/debug/openmoonray",
+                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/debug/openmoonray",
                 "MOONRAY_USE_OPTIX": "NO"
             },
             "generator": "Unix Makefiles"
@@ -116,10 +114,10 @@
             "name": "windows-rez-release",
             "displayName": "Windows Rez Release",
             "inherits": "windows-rez",
-            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/release",
+            "binaryDir": "$env{BUILD_DIR}/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/release",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/release/openmoonray",
+                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/release/openmoonray",
                 "MOONRAY_USE_OPTIX": "NO"
             },
             "generator": "Visual Studio 17 2022"
@@ -128,10 +126,10 @@
             "name": "windows-rez-relwithdebinfo",
             "displayName": "Windows Rez RelWithDebInfo",
             "inherits": "windows-rez",
-            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/relwithdebinfo",
+            "binaryDir": "$env{BUILD_DIR}/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/relwithdebinfo",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/relwithdebinfo/openmoonray",
+                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/relwithdebinfo/openmoonray",
                 "MOONRAY_USE_OPTIX": "NO"
             },
             "generator": "Visual Studio 17 2022"
@@ -140,10 +138,10 @@
             "name": "windows-rez-debug",
             "displayName": "Windows Rez Debug",
             "inherits": "windows-rez",
-            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/debug",
+            "binaryDir": "$env{BUILD_DIR}/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/vfx$env{REZ_VFXPLATFORM_MAJOR_VERSION}/debug/openmoonray",
+                "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/installs/$env{REZ_REFPLAT_MAJOR_VERSION}/usd$env{REZ_OPENUSD_VERSION}/debug/openmoonray",
                 "MOONRAY_USE_OPTIX": "NO"
             },
             "generator": "Visual Studio 17 2022"
