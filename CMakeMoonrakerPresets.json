@@ -70,7 +70,8 @@
             "cacheVariables": {
                 "OPENSSL_ROOT_DIR": "$env{REZ_PYTHON_ROOT}",
                 "GLEW_ROOT": "$env{REZ_GLEW_ROOT}",
-                "CMAKE_SYSTEM_VERSION": "$env{REZ_WINSDK_VERSION}"
+                "CMAKE_SYSTEM_VERSION": "$env{REZ_WINSDK_VERSION}",
+                "BUILD_ARRAS": "OFF"
             },
             "generator": "Visual Studio 17 2022"
         },

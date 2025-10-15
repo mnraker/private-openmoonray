@@ -35,6 +35,7 @@ option(ABI_SET_VERSION    "Enable the abi-version option" OFF)
 if(ABI_SET_VERSION)
     set(ABI_VERSION "6" CACHE STRING "If ABI_SET_VERSION is on, which version to set")
 endif()
+option(BUILD_ARRAS        "Build Arras" ON)
 
 # ================================================
 # Build Type
@@ -63,7 +64,9 @@ set(THREADS_HAVE_PTHREAD_ARG FALSE)
 # ================================================
 # Subdirectories
 # ================================================
-add_subdirectory(arras)
+if(BUILD_ARRAS)
+    add_subdirectory(arras)
+endif()
 add_subdirectory(moonray)
 add_subdirectory(rats)
 add_subdirectory(scripts)
