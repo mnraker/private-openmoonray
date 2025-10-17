@@ -124,6 +124,12 @@
             "generator": "Visual Studio 17 2022"
         },
         {
+            "name": "windows-rez-release-ninja",
+            "displayName": "Windows Rez Release (Ninja)",
+            "inherits": "windows-rez-release",
+            "generator": "Ninja Multi-Config"
+        },
+        {
             "name": "windows-rez-relwithdebinfo",
             "displayName": "Windows Rez RelWithDebInfo",
             "inherits": "windows-rez",
@@ -167,6 +173,13 @@
             "name": "windows-rez-release",
             "displayName": "Windows Rez Release",
             "configurePreset": "windows-rez-release",
+            "configuration": "Release",
+            "targets": ["install"]
+        },
+        {
+            "name": "windows-rez-release-ninja",
+            "displayName": "Windows Rez Release (Ninja)",
+            "configurePreset": "windows-rez-release-ninja",
             "configuration": "Release",
             "targets": ["install"]
         },
