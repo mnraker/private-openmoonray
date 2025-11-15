@@ -47,7 +47,10 @@
                 "Python_FIND_STRATEGY": "LOCATION",
                 "Python3_FIND_STRATEGY": "LOCATION",
                 "BOOST_PYTHON_COMPONENT_NAME": "python$env{REZ_PYTHON_MAJOR_VERSION}$env{REZ_PYTHON_MINOR_VERSION}",
-                "Python3_VERSION": "$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_PATCH_VERSION}"
+                "Python3_VERSION": "$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_PATCH_VERSION}",
+                "OPENSSL_INCLUDE_DIR"           : "$env{OPENSSL_INCLUDE_DIR}",
+                "OPENSSL_CRYPTO_LIBRARY"        : "$env{OPENSSL_CRYPTO_LIBRARY}",
+                "OPENSSL_SSL_LIBRARY"           : "$env{OPENSSL_SSL_LIBRARY}"
             }
         },
         {
@@ -56,9 +59,6 @@
             "inherits": "rez-env",
             "cacheVariables": {
                 "CMAKE_INSTALL_LIBDIR": "lib",
-                "OPENSSL_INCLUDE_DIR": "/usr/include/openssl3",
-                "OPENSSL_CRYPTO_LIBRARY": "/usr/lib64/libcrypto.so.3",
-                "OPENSSL_SSL_LIBRARY": "/usr/lib64/libssl.so.3",
                 "Microhttpd_LIBRARY": "$env{LIBMICROHTTPD_ROOT}/lib/libmicrohttpd.so.0"
             }
         },
@@ -68,7 +68,7 @@
             "inherits": "rez-env",
             "binaryDir": "$env{BUILD_DIR}",
             "cacheVariables": {
-                "OPENSSL_ROOT_DIR": "$env{REZ_PYTHON_ROOT}",
+                "OPENSSL_ROOT_DIR": "$env{REZ_OPENSSL_ROOT}",
                 "GLEW_ROOT": "$env{REZ_GLEW_ROOT}",
                 "CMAKE_SYSTEM_VERSION": "$env{REZ_WINSDK_VERSION}",
                 "BUILD_ARRAS": "OFF"
