@@ -50,7 +50,8 @@
                 "Python3_VERSION": "$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_MAJOR_VERSION}.$env{REZ_PYTHON_PATCH_VERSION}",
                 "OPENSSL_INCLUDE_DIR"           : "$env{OPENSSL_INCLUDE_DIR}",
                 "OPENSSL_CRYPTO_LIBRARY"        : "$env{OPENSSL_CRYPTO_LIBRARY}",
-                "OPENSSL_SSL_LIBRARY"           : "$env{OPENSSL_SSL_LIBRARY}"
+                "OPENSSL_SSL_LIBRARY"           : "$env{OPENSSL_SSL_LIBRARY}",
+                "CMAKE_CXX_STANDARD"            : "17"
             }
         },
         {
