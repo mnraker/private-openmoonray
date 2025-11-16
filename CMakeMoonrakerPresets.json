@@ -68,6 +68,10 @@
             "hidden": true,
             "inherits": "rez-env",
             "binaryDir": "$env{BUILD_DIR}",
+            "environment": {
+                "XXD_BIN": "$env{REZ_XXD_BIN}",
+                "CLANGCL_BIN": "$env{REZ_CLANG_CXX_BIN}"
+            },
             "cacheVariables": {
                 "OPENSSL_ROOT_DIR": "$env{REZ_OPENSSL_ROOT}",
                 "GLEW_ROOT": "$env{REZ_GLEW_ROOT}",
